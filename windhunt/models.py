@@ -28,7 +28,6 @@ class Windforecast(models.Model):
     wind_max = models.FloatField()
     wind_average = models.FloatField()
     wind_angle = models.FloatField()
-    test = models.FloatField()
     class Meta:
         unique_together = (("forecast_time", "runtime"),)
 
