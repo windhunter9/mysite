@@ -91,17 +91,15 @@ def some_view(request):
 
 
 def showimage(request):
-    print('asdf')
-from lxml import html
+    #setPlt() # create the plot
+    #svg = pltToSvg() # convert plot to SVG
+    #plt.cla() # clean up plt so it can be re-used
+    #tree = getHtmlData('https://www.windfinder.com/weatherforecast/lippesee_paderborn')
+    #print(tree)
 
+   # day1 = tree.xpath('//*[@id="frame"]/div/div[1]/section[1]/section[1]/div/div[1]/h4/text()')[0]
+    #day1 = day1[day1.find(",")+2:]
+    day1 = "assdf"
 
-def trash():
-    df = GetSuperForecast_Windfinder()
-
-    for index, row in df.iterrows():
-        try:
-            Windforecast.objects.create(wind_average = row['average'], wind_max = row['max'], runtime = row['runtime'], forecast_time = row['forecast_time'])
-        except:
-            day1 += str(row['runtime']) +"\n\n"
     return render(request,'windhunt/showimage.html', {'out': day1})
 

@@ -7,7 +7,7 @@ import ast
 
 def GetActualWind():
 	page = 'http://www.svpb.de/lippesee/wetter-station'
-	tree_station = screen_scraping.GetHtmlData(page)
+	tree_station = _screen_scraping.GetHtmlData(page)
 	path_wind_actual = '//*[@id="c962"]/div/div[4]/script/text()'
 
 	path_time_actual = '//*[@id="c962"]/div/div[1]/div/p/text()'
