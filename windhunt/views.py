@@ -56,10 +56,6 @@ import numpy as np
 import random 
 import sys
 
-from common.utils.screen_scraping.screen_scraping import *
-from common.utils.screen_scraping.windfinder import *
-from common.utils.screen_scraping.station_lippesee import *
-
 
 def setPlt():
     numPts = 50
@@ -95,38 +91,7 @@ def some_view(request):
 
 
 def showimage(request):
-    #setPlt() # create the plot
-    #svg = pltToSvg() # convert plot to SVG
-    #plt.cla() # clean up plt so it can be re-used
-    #tree = getHtmlData('https://www.windfinder.com/weatherforecast/lippesee_paderborn')
-    #print(tree)
-
-   # day1 = tree.xpath('//*[@id="frame"]/div/div[1]/section[1]/section[1]/div/div[1]/h4/text()')[0]
-    #day1 = day1[day1.find(",")+2:]
-    day1 = "assdf"
-    df = GetSuperForecast_Windfinder()
-
-    for index, row in df.iterrows():
-        try:
-            Windforecast.objects.create(wind_average = row['average'], 
-                                        wind_max = row['max'],
-                                        runtime = row['runtime'],
-                                        forecast_time = row['forecast_time'],
-                                        wind_angle = row['angle']
-                                        )
-        except:
-            day1 += str(row['runtime']) +"\n\n"
-
-    df = GetActualWind()
-    for index, row in df.iterrows():
-        try:
-            WindMeasurement.objects.create(wind_average = row['average'], wind_max = row['max'], runtime = row['runtime'])
-        except:
-            day1 += str(row['runtime']) +"\n\n"
-
-    return render(request,'windhunt/showimage.html', {'out': day1})
-
-import requests
+    print('asdf')
 from lxml import html
 
 

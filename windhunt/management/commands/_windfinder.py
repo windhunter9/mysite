@@ -1,6 +1,6 @@
 __all__ = ['GetSuperForecast_Windfinder']
 
-from . import screen_scraping
+from . import _screen_scraping
 from datetime import datetime, timedelta
 import pandas as pd
 

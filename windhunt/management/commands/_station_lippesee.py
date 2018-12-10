@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 import pandas as pd
-from . import screen_scraping
+from . import _screen_scraping
 import numpy as np
 import ast
 
