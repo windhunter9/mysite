@@ -44,7 +44,7 @@ class WindMeasurementAdmin(admin.ModelAdmin):
 
 	    f = io.StringIO()
 	    writer = csv.writer(f)
-	    writer.writerow(["runtime", "wind_average", "wind_max","wind_angle"])
+	    writer.writerow(["runtime", "wind_average", "wind_max"])
 
 	    for s in queryset:
 	        writer.writerow([s.runtime, s.wind_average, s.wind_max])
