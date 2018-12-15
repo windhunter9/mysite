@@ -1,12 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Question
-class QuestionAdmin(admin.ModelAdmin):
-    fields = ['pub_date', 'question_text']
 
-
+from .models import WindMeasurement
 from .models import WindSuperforecast
+from .models import WindForecast
+
+
 class WindSuperforecastAdmin(admin.ModelAdmin):
     fields = ['runtime', 'forecast_time','wind_max', 'wind_average', 'wind_angle']
 
@@ -32,7 +32,6 @@ class WindSuperforecastAdmin(admin.ModelAdmin):
 
 
 
-from .models import WindMeasurement
 class WindMeasurementAdmin(admin.ModelAdmin):
 	fields = ['runtime', 'wind_max', 'wind_average']
 	actions = ['download_csv']
@@ -62,4 +61,5 @@ class WindMeasurementAdmin(admin.ModelAdmin):
 
 admin.site.register(WindMeasurement, WindMeasurementAdmin)
 admin.site.register(WindSuperforecast, WindSuperforecastAdmin)
-admin.site.register(Question, QuestionAdmin)
+admin.site.register(WindForecast, WindSuperforecastAdmin)
+
