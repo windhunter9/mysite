@@ -32,17 +32,6 @@ class WindSuperforecast(models.Model):
         unique_together = (("forecast_time", "runtime"),)
 
 
-class WindForecast(models.Model):
-    id = models.AutoField(primary_key=True)
-    forecast_time = models.DateTimeField()
-    runtime = models.DateTimeField()
-    wind_max = models.FloatField()
-    wind_average = models.FloatField()
-    wind_angle = models.FloatField()
-    class Meta:
-        unique_together = (("forecast_time", "runtime"),)
-
-
 
 
 class WindMeasurement(models.Model):
@@ -50,4 +39,15 @@ class WindMeasurement(models.Model):
     runtime = models.DateTimeField(unique = True)
     wind_max = models.FloatField()
     wind_average = models.FloatField()
+
+
+class WindForecast(models.Model):
+    id = models.AutoField(primary_key=True)
+    forecast_time = models.DateTimeField( default=0)
+    runtime = models.DateTimeField()
+    wind_max = models.FloatField()
+    wind_average = models.FloatField()
+    wind_angle = models.FloatField()
+    class Meta:
+        unique_together = (("forecast_time", "runtime"),)
 
