@@ -6,8 +6,8 @@ class QuestionAdmin(admin.ModelAdmin):
     fields = ['pub_date', 'question_text']
 
 
-from .models import Windforecast
-class WindforecastAdmin(admin.ModelAdmin):
+from .models import WindSuperforecast
+class WindSuperforecastAdmin(admin.ModelAdmin):
     fields = ['runtime', 'forecast_time','wind_max', 'wind_average', 'wind_angle']
 
     actions = ['download_csv']
@@ -61,5 +61,5 @@ class WindMeasurementAdmin(admin.ModelAdmin):
 
 
 admin.site.register(WindMeasurement, WindMeasurementAdmin)
-admin.site.register(Windforecast, WindforecastAdmin)
+admin.site.register(WindSuperforecast, WindSuperforecastAdmin)
 admin.site.register(Question, QuestionAdmin)

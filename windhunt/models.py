@@ -21,7 +21,7 @@ class Choice(models.Model):
     	return self.choice_text
 
 
-class Windforecast(models.Model):
+class WindSuperforecast(models.Model):
     id = models.AutoField(primary_key=True)
     forecast_time = models.DateTimeField()
     runtime = models.DateTimeField()
