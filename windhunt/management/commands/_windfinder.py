@@ -1,6 +1,6 @@
-__all__ = ['GetSuperForecast_Windfinder']
+#__all__ = ['GetSuperForecast', 'GetForecast']
 
-import _screen_scraping
+from . import _screen_scraping
 from datetime import datetime, timedelta
 import pandas as pd
 
@@ -27,7 +27,7 @@ def GetAngle(tree, xpath_angle):
     wind_angle = [s.replace('\n', '').replace('°', '').strip() for s in wind_angle]
     return wind_angle
 
-def GetSuperForecast_Windfinder():
+def GetSuperForecast():
     page = 'https://www.windfinder.com/weatherforecast/lippesee_paderborn'
 
     xpath_day1_wind_max = '//*[@id="sidebar-ad-scaffold"]/div[1]/section/section[1]/div/div[2]/div/div[5]/div[2]/span[2]'
