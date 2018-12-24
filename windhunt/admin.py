@@ -10,7 +10,7 @@ from .models import WindForecast
 class WindSuperforecastAdmin(admin.ModelAdmin):
     fields = ['runtime', 'forecast_time','wind_max', 'wind_average', 'wind_angle']
 
-    actions = ['download_csv']
+    actions = ['download_csv', 'delete_data']
     def download_csv(self, request, queryset):
 	    import csv
 	    from django.http import HttpResponse
@@ -29,6 +29,11 @@ class WindSuperforecastAdmin(admin.ModelAdmin):
 	    response['Content-Disposition'] = 'attachment; filename=windforecast.csv'
 	    return response
     download_csv.short_description = "Download CSV"
+
+    def delete_data(self, request, queryset):
+    	queryset.delete();
+    delete_data.short_description = "Delete all data"
+
 
 
 
