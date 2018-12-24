@@ -59,12 +59,9 @@ class WindMeasurementAdmin(admin.ModelAdmin):
 	    return response
 	download_csv.short_description = "Download CSV file for selected stats."
 
-
-
-    def delete_data(self, request, queryset):
-    	queryset.delete();
-    delete_data.short_description = "Delete all data"
-
+	def delete_data(self, request, queryset):
+		queryset.delete();
+	delete_data.short_description = 'Delete all data'
 
 
 admin.site.register(WindMeasurement, WindMeasurementAdmin)
