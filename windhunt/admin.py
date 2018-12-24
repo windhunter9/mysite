@@ -39,7 +39,7 @@ class WindSuperforecastAdmin(admin.ModelAdmin):
 
 class WindMeasurementAdmin(admin.ModelAdmin):
 	fields = ['runtime', 'wind_max', 'wind_average']
-	actions = ['download_csv']
+	actions = ['download_csv', 'delete_data']
 	def download_csv(self, request, queryset):
 	    import csv
 	    from django.http import HttpResponse
@@ -61,6 +61,9 @@ class WindMeasurementAdmin(admin.ModelAdmin):
 
 
 
+    def delete_data(self, request, queryset):
+    	queryset.delete();
+    delete_data.short_description = "Delete all data"
 
 
 
