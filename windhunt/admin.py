@@ -66,5 +66,5 @@ class WindSuperforecastAdmin(admin.ModelAdmin):
 
 # admin.site.register(WindMeasurement, WindMeasurementAdmin)
 # admin.site.register(WindSuperforecast, WindSuperforecastAdmin)
-# admin.site.register(WindForecast, WindSuperforecastAdmin)
+admin.site.register(WindForecast, WindSuperforecastAdmin)
 
