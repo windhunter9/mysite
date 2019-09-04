@@ -7,6 +7,8 @@ from ._screen_scraping import *
 from . import _windfinder
 from ._station_lippesee import *
 
+from .dwd import *
+
 class Command(BaseCommand):
 	help = "<appropriate help text here>"
 	def handle(self, *args, **options):
