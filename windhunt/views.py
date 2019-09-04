@@ -5,7 +5,7 @@ from django.views import generic
 from django.utils import timezone
 
 
-from .models import WindSuperforecast, WindMeasurement
+# from .models import WindSuperforecast, WindMeasurement
 from .models import Choice, Question
 
 
