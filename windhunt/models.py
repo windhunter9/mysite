@@ -3,6 +3,7 @@ from django.utils import timezone
 import datetime
 # Create your models here.
 
+user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)

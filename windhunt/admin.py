@@ -7,8 +7,8 @@ from django.contrib import admin
 # from .models import WindForecast
 # # 
 
-# class WindSuperforecastAdmin(admin.ModelAdmin):
-#     fields = ['runtime', 'forecast_time','wind_max', 'wind_average', 'wind_angle']
+class WindSuperforecastAdmin(admin.ModelAdmin):
+    fields = ['runtime', 'forecast_time','wind_max', 'wind_average', 'wind_angle']
 
 #     actions = ['download_csv', 'delete_data']
 #     # def download_csv(self, request, queryset):
